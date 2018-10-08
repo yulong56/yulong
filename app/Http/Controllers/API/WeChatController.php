@@ -11,15 +11,15 @@ namespace App\Http\Controllers\API;
 
 use App\Components\DateTool;
 use App\Http\Controllers\Controller;
-use EasyWeChat\Kernel\Messages\Image;
+/*use EasyWeChat\Kernel\Messages\Image;
 use EasyWeChat\Kernel\Messages\News;
 use EasyWeChat\Kernel\Messages\NewsItem;
 use EasyWeChat\Kernel\Messages\Text;
 use EasyWeChat\Kernel\Messages\Video;
-use EasyWeChat\Kernel\Messages\Voice;
+use EasyWeChat\Kernel\Messages\Voice;*/
 use Illuminate\Support\Facades\Log;
-use Yansongda\Pay\Pay;
-use Illuminate\Http\Request;
+/*use Yansongda\Pay\Pay;
+use Illuminate\Http\Request;*/
 
 
 class WeChatController extends Controller
