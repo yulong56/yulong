@@ -13,12 +13,10 @@
 
 
 
-Route::group(['prefix' => '', 'middleware' => []], function () {
+Route::group(['prefix' => '', 'middleware' => ['wechat.oauth:snsapi_userinfo']], function () {
 
 
-    Route::middleware('wechat.oauth:snsapi_userinfo')->group(function () {
         Route::get('index', 'Html5\IndexController@index');
-    });
 
 });
 
