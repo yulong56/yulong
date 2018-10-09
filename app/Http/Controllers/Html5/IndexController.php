@@ -9,6 +9,7 @@ namespace App\Http\Controllers\Html5;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 class IndexController extends Controller
 {
     public function index1(Request $request)
@@ -16,17 +17,14 @@ class IndexController extends Controller
 //        $session_val = session('wechat.oauth_user'); // 拿到授权用户资料
         return view('html5.welcome', []);
     }
-    public function index()
+    public function index(Request $request)
     {
-        $userInfo = $this->getEasyWechatSession();
-//根据微信信息注册用户。
-        $userData = [
-            'password' => bcrypt('123456'),
-            'openid' => $userInfo['id'],
-            'nickname' => $userInfo['nickname'],
-        ];
-        //注意批量写入需要把相应的字段写入User中的$fillable属性数组中
-        $user = session('wechat.oauth_user.default');
-        return $user;
+        $data = $request->all();
+
+        $session_val = session('wechat.oauth_user'); // 拿到授权用户资料
+
+        Log::info("session_val:" . json_encode($session_val));
+       /* return view('html5.welcome', ['aaa'=>'1']);*/
+       return $session_val;
     }
 }
