@@ -87,7 +87,7 @@ class WeChatController extends Controller
             }
         });
         $user = $app->user->list();
-        Log::info(__useropenid__ . " " .$user['$openid'] );
+        Log::info(__METHOD__ . " " .$user['$openid'] );
         $openid = $user['$openid'];
         $response = $app->template_message->sendSubscription([
             'touser' => $openid,
