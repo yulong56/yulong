@@ -97,7 +97,7 @@ class WeChatController extends Controller
 //        ],
 //    ]);
 //        $user = $app->user->list();
-        return $response;
+        return $response->template_list[0];
     }
 
 
