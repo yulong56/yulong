@@ -37,7 +37,8 @@ class WeChatController extends Controller
     {
         Log::info(__METHOD__ . " " . 'request arrived.'); # 注意：Log 为 Laravel 组件，所以它记的日志去 Laravel 日志看，而不是 EasyWeChat 日志
         $app = app('wechat.official_account');
-        $app->server->push(function ($message) {
+        $response =  $app->template_message->getIndustry();
+       /* $app->server->push(function ($message) {
             $app = app('wechat.official_account');
 
             //根据消息类型分别进行处理
@@ -85,8 +86,7 @@ class WeChatController extends Controller
 //                    return '';
                     break;
             }
-        });
-        $user = $app->user->list();
+        });*/
 //        $response = $app->template_message->sendSubscription([
 //            'touser' => 'user-openid',
 //            'template_id' => 'template-id',
@@ -97,7 +97,6 @@ class WeChatController extends Controller
 //        ],
 //    ]);
 //        $user = $app->user->list();
-        $response = $app->server->serve();
         return $response;
     }
 
