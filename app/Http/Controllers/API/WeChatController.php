@@ -96,20 +96,19 @@ class WeChatController extends Controller
 //                'baz' => ['value' => '你好', 'color' => '#550038'], // 与第二种一样
 //        ],
 //    ]);
-        $user = $app->user->list();
 //        $template_id = $response->template_list[0];
 //        $user = $app->user->list();
 //        $user_openid  = $user[0];
-      /*  $res = $app->template_message->sendSubscription([
-            'touser' => $user_openid,
+       $res = $app->template_message->sendSubscription([
+            'touser' => 'o6DOM1Uunt_-vtxsbNtEby933COY',
             'template_id' => 'C_USwh9Af6oPS5db1g-M4Bsozk7BBpIGKjLc5RPUAWE',
             'url' => 'http://foryulong.isart.me',
             'scene' => 1000,
             'data' => [
                 'zoo' => ['value' => '你好'],
             ]
-    ]);*/
-        return $user;
+    ]);
+        return $res;
     }
 
 
