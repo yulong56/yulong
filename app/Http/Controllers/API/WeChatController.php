@@ -86,7 +86,19 @@ class WeChatController extends Controller
                     break;
             }
         });
-        $response = $app->template_message->getIndustry();//$app->server->serve();
+        $response = $app->template_message->sendSubscription([
+            'touser' => 'user-openid',
+            'template_id' => 'template-id',
+            'url' => 'https://easywechat.org',
+            'scene' => 1000,
+            'data' => [
+                'foo' => '你好',  // 不需要指定颜色
+                'bar' => ['你好', '#F00'], // 指定为红色
+                'baz' => ['value' => '你好', 'color' => '#550038'], // 与第二种一样
+                'zoo' => ['value' => '你好'], // 与第一种一样
+        ],
+    ]);
+        //$app->server->serve();
         return $response;
     }
 
