@@ -15,13 +15,10 @@ class IndexController extends Controller
     public function index(Request $request)
     {
         $data = $request->all();
-
         $session_val = session('wechat.oauth_user'); // 拿到授权用户资料
-        $id = $session_val->getId();
         Log::info("session_val:" . json_encode($session_val));
-
        /* return view('html5.welcome', ['aaa'=>'1']);*/
-       return $id;
+       return $session_val;
     }
     public function template(Request $request)
     {
