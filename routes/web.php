@@ -17,7 +17,7 @@ Route::group(['prefix' => '', 'middleware' => ['wechat.oauth:snsapi_userinfo']],
 
 
         Route::get('index', 'Html5\IndexController@index');
-        Route::get('template', 'Html5\IndexController@index');
+        Route::get('template', 'Html5\IndexController@template');
 
 });
 
