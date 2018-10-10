@@ -97,7 +97,19 @@ class WeChatController extends Controller
 //        ],
 //    ]);
 //        $user = $app->user->list();
-        return $response->template_list[0];
+        $template_id = $response->template_list[0];
+        $user = $app->user->list();
+        $user_openid  = $user[0];
+        $res = $app->template_message->sendSubscription([
+            'touser' => $user_openid,
+            'template_id' => $template_id,
+            'url' => 'http://foryulong.isart.me',
+            'scene' => 1000,
+            'data' => [
+                'zoo' => ['value' => '你好'],
+            ]
+    ]);
+        return $res;
     }
 
 
