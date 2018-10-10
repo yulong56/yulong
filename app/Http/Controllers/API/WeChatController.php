@@ -18,8 +18,8 @@ use EasyWeChat\Kernel\Messages\Text;
 use EasyWeChat\Kernel\Messages\Video;
 use EasyWeChat\Kernel\Messages\Voice;*/
 use Illuminate\Support\Facades\Log;
-/*use Yansongda\Pay\Pay;
-use Illuminate\Http\Request;*/
+/*use Yansongda\Pay\Pay;*/
+use Illuminate\Http\Request;
 
 
 class WeChatController extends Controller
