@@ -12,7 +12,7 @@
 */
 
 
-Route::group(['prefix' => '', 'middleware' => ['BeforeRequest','wechat.oauth:snsapi_userinfo']], function () {
+Route::group(['prefix' => '', 'middleware' => ['BeforeRequest']], function () {
 
     //测试接口
     Route::get('test', 'API\TestController@test');

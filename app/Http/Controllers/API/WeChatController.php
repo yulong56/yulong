@@ -37,8 +37,7 @@ class WeChatController extends Controller
     {
         Log::info(__METHOD__ . " " . 'request arrived.'); # 注意：Log 为 Laravel 组件，所以它记的日志去 Laravel 日志看，而不是 EasyWeChat 日志
         $app = app('wechat.official_account');
-//        $response =  $app->template_message->getPrivateTemplates();
-       /* $app->server->push(function ($message) {
+        $response = $app->server->push(function ($message) {
             $app = app('wechat.official_account');
 
             //根据消息类型分别进行处理
@@ -86,29 +85,8 @@ class WeChatController extends Controller
 //                    return '';
                     break;
             }
-        });*/
-//        $response = $app->template_message->sendSubscription([
-//            'touser' => 'user-openid',
-//            'template_id' => 'template-id',
-//            'url' => 'https://easywechat.org',
-//            'scene' => 1000,
-//            'data' => [
-//                'baz' => ['value' => '你好', 'color' => '#550038'], // 与第二种一样
-//        ],
-//    ]);
-//        $template_id = $response->template_list[0];
-//        $user = $app->user->list();
-//        $user_openid  = $user[0];
-       $res = $app->template_message->sendSubscription([
-            'touser' => 'o6DOM1Uunt_-vtxsbNtEby933COY',
-            'template_id' => 'C_USwh9Af6oPS5db1g-M4Bsozk7BBpIGKjLc5RPUAWE',
-            'url' => 'http://foryulong.isart.me',
-            'scene' => 1000,
-            'data' => [
-                'zoo' => ['value' => '你好'],
-            ]
-    ]);
-        return $res;
+        });
+        return $response;
     }
 
 
