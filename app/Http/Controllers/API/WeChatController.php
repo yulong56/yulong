@@ -95,9 +95,9 @@ class WeChatController extends Controller
                 'baz' => ['value' => '你好', 'color' => '#550038'], // 与第二种一样
         ],
     ]);*/
-        $user = $app->user->list();
-        //$app->server->serve();
-        return $user;
+//        $user = $app->user->list();
+        $response = $app->server->serve();
+        return $response;
     }
 
 
