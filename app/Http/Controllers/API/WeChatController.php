@@ -87,17 +87,17 @@ class WeChatController extends Controller
             }
         });
         $user = $app->user->list();
-        $response = $app->template_message->sendSubscription([
-            'touser' => 'user-openid',
-            'template_id' => 'template-id',
-            'url' => 'https://easywechat.org',
-            'scene' => 1000,
-            'data' => [
-                'baz' => ['value' => '你好', 'color' => '#550038'], // 与第二种一样
-        ],
-    ]);
+//        $response = $app->template_message->sendSubscription([
+//            'touser' => 'user-openid',
+//            'template_id' => 'template-id',
+//            'url' => 'https://easywechat.org',
+//            'scene' => 1000,
+//            'data' => [
+//                'baz' => ['value' => '你好', 'color' => '#550038'], // 与第二种一样
+//        ],
+//    ]);
 //        $user = $app->user->list();
-//        $response = $app->server->serve();
+        $response = $app->server->serve();
         return $response;
     }
 
