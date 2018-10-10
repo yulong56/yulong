@@ -86,7 +86,7 @@ class WeChatController extends Controller
                     break;
             }
         });
-        $response = $app->server->serve();
+        $response = $app->template_message->getIndustry();//$app->server->serve();
         return $response;
     }
 
