@@ -12,20 +12,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 class IndexController extends Controller
 {
-    public function index1(Request $request)
-    {
-//        $session_val = session('wechat.oauth_user'); // 拿到授权用户资料
-        return view('html5.welcome', []);
-    }
     public function index(Request $request)
     {
         $data = $request->all();
 
         $session_val = session('wechat.oauth_user'); // 拿到授权用户资料
-
+        $id = $session_val->getId();
         Log::info("session_val:" . json_encode($session_val));
+
        /* return view('html5.welcome', ['aaa'=>'1']);*/
-       return $session_val;
+       return $id;
     }
     public function template(Request $request)
     {
