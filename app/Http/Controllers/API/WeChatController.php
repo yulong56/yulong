@@ -77,6 +77,7 @@ class WeChatController extends Controller
 //                        ->send();
                     $app->template_message->sendSubscription([
                         'touser' => $user_openid,
+                        'template_id' => 'QpJ8X8USJTC7lvEpAQQ35U0zsAtd3kkiIvbCzrElwj8',
                         'url' => 'http://foryulong.isart.me',
                         'scene' => 1000,
                         'data' => [
