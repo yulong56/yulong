@@ -91,8 +91,9 @@ class WeChatController extends Controller
     }
     public function template(Request $request)
     {
+        Log::info(__METHOD__ . " " . 'request arrived.');
         $app = app('wechat.official_account');
-        $res = $app->template_message->sendSubscription([
+      /*  $res = $app->template_message->sendSubscription([
             'touser' => 'o6DOM1Uunt_-vtxsbNtEby933COY',
             'template_id' => 'C_USwh9Af6oPS5db1g-M4Bsozk7BBpIGKjLc5RPUAWE',
             'url' => 'http://foryulong.isart.me',
@@ -100,7 +101,8 @@ class WeChatController extends Controller
             'data' => [
                 'zoo' => ['value' => '你好'],
             ]
-        ]);
+        ]);*/
+        $res = $app->server->serve();
         return $res;
     }
 
