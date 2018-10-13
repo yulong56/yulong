@@ -20,6 +20,7 @@ use EasyWeChat\Kernel\Messages\Voice;*/
 use Illuminate\Support\Facades\Log;
 /*use Yansongda\Pay\Pay;*/
 use Illuminate\Http\Request;
+use EasyWeChat\Kernel\Messages\Text;
 
 
 class WeChatController extends Controller
