@@ -71,11 +71,18 @@ class WeChatController extends Controller
                     Log::info(__METHOD__ . " " . "message:" . json_encode($message));
                     $text = $message['Content'];
                     Log::info(__METHOD__ . " " . "text:" . $text);
-                    $text_msg = new Text($text);
-                    $app->customer_service->message($text_msg)
-                        ->to($user_openid)
-                        ->send();
-
+//                    $text_msg = new Text($text);
+//                    $app->customer_service->message($text_msg)
+//                        ->to($user_openid)
+//                        ->send();
+                    $app->template_message->sendSubscription([
+                        'touser' => $user_openid,
+                        'url' => 'http://foryulong.isart.me',
+                        'scene' => 1000,
+                        'data' => [
+                            'zoo' => ['value' => '你好'],
+                        ]
+                    ]);
                     break;
                 case 'image':
 
