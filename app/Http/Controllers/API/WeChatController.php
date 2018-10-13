@@ -35,12 +35,10 @@ class WeChatController extends Controller
      */
     public function serve()
     {
-
         Log::info(__METHOD__ . " " . 'request arrived.'); # 注意：Log 为 Laravel 组件，所以它记的日志去 Laravel 日志看，而不是 EasyWeChat 日志
-
         $app = app('wechat.official_account');
         $app->server->push(function ($message) {
-            $app = app(self::ACCOUNT_CONFIG);
+            $app = app('wechat.official_account');
             Log::info(__METHOD__ . " " . "server receive:" . json_encode($message));
             $user_openid = $message['FromUserName'];  //用户公众号openid
             Log::info(__METHOD__ . " " . 'user_openid:' . $user_openid);
@@ -93,10 +91,7 @@ class WeChatController extends Controller
                 case 'link':
 
                     break;
-            }
-        });
-        $response = $app->server->serve();
-        return $response;
+
 //        Log::info(__METHOD__ . " " . 'request arrived.'); # 注意：Log 为 Laravel 组件，所以它记的日志去 Laravel 日志看，而不是 EasyWeChat 日志
 //        $app = app('wechat.official_account');
 //        $app->server->push(function ($message) {
